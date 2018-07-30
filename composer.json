@@ -21,7 +21,10 @@
     "autoload": {
         "psr-4": {
             "JimChen\\GBT2260\\": "packages/php/src"
-        }
+        },
+        "files": [
+            "php/helpers.php"
+        ]
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
