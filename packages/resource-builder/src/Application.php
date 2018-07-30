@@ -1,8 +1,8 @@
 <?php
 
-declare(strict_types=1);
+declare(ticks=1);
 
-namespace Medz\GBT2260\ResourceBuilder;
+namespace JimChen\GBT2260\ResourceBuilder;
 
 use Illuminate\Container\Container;
 
@@ -11,12 +11,12 @@ class Application extends Container
 	/**
 	 * The app name.
 	 */
-	public const NAME = 'GB/T 2260 Builder';
+	const NAME = 'GB/T 2260 Builder';
 
 	/**
 	 * The app version.
 	 */
-	public const VERSION = '2.0.0';
+	const VERSION = '2.0.0';
 
 	/**
 	 * Create the instance.
@@ -67,7 +67,7 @@ class Application extends Container
 	 *
 	 * @return string
 	 */
-	public function getName(): string
+	public function getName()
 	{
 		return static::NAME;
 	}
@@ -77,7 +77,7 @@ class Application extends Container
 	 *
 	 * @return string
 	 */
-	public function getVersion(): string
+	public function getVersion()
 	{
 		return static::VERSION;
 	}
@@ -90,13 +90,13 @@ class Application extends Container
 	{
 		foreach ([
 			'app' => [
-				\Medz\GBT2260\ResourceBuilder\Application::class,
+				\JimChen\GBT2260\ResourceBuilder\Application::class,
 				\Illuminate\Contracts\Container\Container::class,
 				\Illuminate\Container\Container::class,
 				\Psr\Container\ContainerInterface::class
 			],
 			'console' => [
-				Medz\GBT2260\ResourceBuilder\Console\Application::class,
+                JimChen\GBT2260\ResourceBuilder\Console\Application::class,
 				Symfony\Component\Console\Application::class,
 			],
 		] as $abstract => $aliases) {

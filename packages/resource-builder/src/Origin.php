@@ -1,8 +1,8 @@
 <?php
 
-declare(strict_types=1);
+declare(ticks=1);
 
-namespace Medz\GBT2260\ResourceBuilder;
+namespace JimChen\GBT2260\ResourceBuilder;
 
 use ArrayAccess;
 use ArrayIterator;
@@ -30,7 +30,7 @@ class Origin implements ArrayAccess, IteratorAggregate
 		// 如果加载过数据，则不执行加载，避免损耗！
 		if (!static::$origin) {
 			static::$origin = $parser->parseFile(
-				ResourceDefinition::ORIGIN_FILENAME
+				ResourceDefinition::getFilePath(ResourceDefinition::ORIGIN_FILENAME)
 			);
 		}
 	}

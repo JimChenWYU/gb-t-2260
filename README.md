@@ -35,13 +35,13 @@
 使用 PHP 版本，你可以使用 Composer 快速的下载：
 
 ```
-composer require medz/gb-t-2260
+composer require jimchen/gb-t-2260
 ```
 
-下载后，这个包提供了地区 JSON RAW 文件和一个 PHP 常量，常量叫做 **`MEDZ_GBT2260_RAW_PATH`**，顾名思义，这个常量就是记录的 JSON RAW 文件的路径，得到路径你就可以自由操作了。例如：
+下载后，这个包提供了地区 JSON RAW 文件和一个 PHP 常量，常量叫做 **`GBT2260_RAW_PATH`**，顾名思义，这个常量就是记录的 JSON RAW 文件的路径，得到路径你就可以自由操作了。例如：
 
 ```php
-$jsonRaw = file_get_contents(MEDZ_GBT2260_RAW_PATH);
+$jsonRaw = file_get_contents(GBT2260_RAW_PATH);
 $jsonObject = json_decode($jsonRaw);
 
 // 现在你可以分别 dump 出两个变量，看其中的内容

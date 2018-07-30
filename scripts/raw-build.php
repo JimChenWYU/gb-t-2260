@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-declare(strict_types=1);
+declare(ticks=1);
 
 $sourceMcaTsvUrl = 'https://github.com/cn/GB2260/raw/develop/mca/201801.tsv';
 
@@ -12,9 +12,18 @@ echo '    > ', "\033[0;32;5m", 'Index Info downloaded.', "\033[0m", PHP_EOL;
 
 // Parse header.
 $fileContentRawUrl = $headers['Location'];
-$fileContentLength = max(...array_map(function ($length): int {
+
+// PHP 7
+//$fileContentLength = max(...array_map(function ($length): int {
+//    return (int) $length;
+//}, (array) $headers['Content-Length']));
+// polyfill 5.5
+$array = array_map(function ($length) {
     return (int) $length;
-}, (array) $headers['Content-Length']));
+}, (array) $headers['Content-Length']);
+sort($array);
+$fileContentLength = array_pop($array);
+
 echo '    ☛ Download file size is [', "\033[0;31;5m", $fileContentLength, "\033[0m", ' Byte].', PHP_EOL;
 
 $sourceMcaTsvContent = '';

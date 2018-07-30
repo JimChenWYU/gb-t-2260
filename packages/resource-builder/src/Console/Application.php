@@ -1,11 +1,11 @@
 <?php
 
-declare(strict_types=1);
+declare(ticks=1);
 
-namespace Medz\GBT2260\ResourceBuilder\Console;
+namespace JimChen\GBT2260\ResourceBuilder\Console;
 
 use Symfony\Component\Console\Application as SymfonyConsoleApplication;
-use Medz\GBT2260\ResourceBuilder\Application as BuilderApplication;
+use JimChen\GBT2260\ResourceBuilder\Application as BuilderApplication;
 
 class Application extends SymfonyConsoleApplication
 {
